@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Unikue Ltd. All rights reserved.
+ * Copyright (c) 2022 Jiovan Ltd. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package cn.unikue.springstarter.ratelimiter.facade.impl;
+package com.jiovan.spring.starter.ratelimit.facade.impl;
 
 
 import jakarta.annotation.Nonnull;
@@ -24,11 +24,11 @@ import org.apache.commons.lang3.StringUtils;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.springframework.http.HttpStatus;
 import org.springframework.util.Assert;
-import cn.unikue.commonplexus.javaseutil.constant.AssertMessageConst;
-import cn.unikue.commonplexus.springutil.structure.RestResponseStruct;
-import cn.unikue.commonplexus.springutil.util.WebUtilsWraps;
-import cn.unikue.springstarter.ratelimiter.annotation.RateLimit;
-import cn.unikue.springstarter.ratelimiter.property.RateLimiterProperties;
+import com.jiovan.plexus.common.toolkit.constant.AssertMessageConst;
+import com.jiovan.plexus.spring.toolkit.structure.RestResponseStruct;
+import com.jiovan.plexus.spring.toolkit.util.WebUtilsWraps;
+import com.jiovan.spring.starter.ratelimit.annotation.RateLimit;
+import com.jiovan.spring.starter.ratelimit.property.RateLimiterProperties;
 
 
 /**

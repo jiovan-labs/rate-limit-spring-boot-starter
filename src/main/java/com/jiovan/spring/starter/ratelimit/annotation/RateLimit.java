@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Unikue Ltd. All rights reserved.
+ * Copyright (c) 2022 Jiovan Ltd. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package cn.unikue.springstarter.ratelimiter.annotation;
+package com.jiovan.spring.starter.ratelimit.annotation;
 
 
 import java.lang.annotation.Documented;
@@ -25,13 +25,13 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.time.temporal.ChronoUnit;
 import org.apache.commons.lang3.StringUtils;
-import cn.unikue.springstarter.ratelimiter.enumeration.LimiterTriggerType;
+import com.jiovan.spring.starter.ratelimit.enumeration.LimiterTriggerType;
 
 
 /**
- * Annotation for setting Rate Limiter period and key type
+ * Annotation for setting Rate Limit period and key type
  * <p>
- * Needs a predefined bean of {@link cn.unikue.springstarter.ratelimiter.aspect.AbstractRateLimitAspect}
+ * Needs a predefined bean of {@link com.jiovan.spring.starter.ratelimit.aspect.AbstractRateLimitAspect}
  *
  * @author David Hsing
  */

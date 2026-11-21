@@ -1,5 +1,5 @@
-# Rate Limiter for Spring Boot Starter
-# Copyright (c) 2022 Unikue Ltd. All rights reserved.
-# https://unikue.cn
+# Rate Limit for Spring Boot Starter
+# Copyright (c) 2022 Jiovan Ltd. All rights reserved.
+# https://jiovan.com
 
-cn.unikue.springstarter.ratelimiter.config.RateLimiterAutoConfiguration
+com.jiovan.spring.starter.ratelimit.config.RateLimitAutoConfiguration

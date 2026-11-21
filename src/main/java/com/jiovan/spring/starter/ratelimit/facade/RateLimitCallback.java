@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016 Unikue Ltd. All rights reserved.
+ * Copyright (c) 2022 Jiovan Ltd. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,20 +14,20 @@
  * limitations under the License.
  */
 
-package cn.unikue.springstarter.ratelimiter.exception;
+package com.jiovan.spring.starter.ratelimit.facade;
 
 
-import lombok.experimental.StandardException;
-import lombok.NoArgsConstructor;
+import jakarta.annotation.Nonnull;
+import org.aspectj.lang.ProceedingJoinPoint;
+import com.jiovan.spring.starter.ratelimit.annotation.RateLimit;
 
 
 /**
- * Exception thrown to indicate that the request rate is limited
+ * Facade for rate limit callback
  *
  * @author David Hsing
  */
-@NoArgsConstructor
-@StandardException
-@SuppressWarnings("unused")
-public class RateLimitedException extends RuntimeException {
+@FunctionalInterface
+public interface RateLimitCallback {
+    Object process(@Nonnull ProceedingJoinPoint point, @Nonnull RateLimit annotation) throws Exception;
 }

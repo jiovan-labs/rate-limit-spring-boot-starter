@@ -1,4 +1,4 @@
-# Rate Limiter Spring Boot Starter
+# Rate Limit Spring Boot Starter
 
 Spring Boot application integrates rate limitation quickly, to prevent too frequent accesses.
 
@@ -8,18 +8,18 @@ Spring Boot application integrates rate limitation quickly, to prevent too frequ
 
 ```xml
     <dependency>
-        <groupId>cn.unikue.springstarter</groupId>
-        <artifactId>rate-limiter-spring-boot-starter</artifactId>
+        <groupId>com.jiovan.spring.starter</groupId>
+        <artifactId>rate-limit-spring-boot-starter</artifactId>
         <version>LATEST</version>
     </dependency>
 ```
 
-> By default, this starter will auto take effect, you can turn it off by `spring.rate-limiter.enabled = false`
+> By default, this starter will auto take effect, you can turn it off by `jiovan.rate-limit.enabled = false`
 
-- Configure Spring Boot `application.yml` with prefix `spring.rate-limiter` (**Optional**)
+- Configure Spring Boot `application.yml` with prefix `jiovan.rate-limit` (**Optional**)
 
 ```yml
-spring:
+jiovan:
     rate-limit:
         name-prefix: "${spring.application.name}:limiter:"
         denied-html-url: '/error/rate-limited'
@@ -40,7 +40,7 @@ spring:
 
 ## Document
 
-- Github: https://github.com/unikueltd/rate-limiter-spring-boot-starter
+- Github: https://github.com/jiovan-labs/rate-limit-spring-boot-starter
 
 ## Requirement
 
@@ -54,12 +54,12 @@ See the `NOTICE.txt` file for required notices and attributions.
 
 ## Donation
 
-You like this package? Then [donate to us](https://unikue.cn/donation) to support the development.
+You like this package? Then [donate to us](https://jiovan.com/donation) to support the development.
 
 ## Copyright
 
-Beijing Unikue Network Technology Ltd.
+Beijing Jiovan Technology Ltd.
 
 ## Website
 
-- Unikue: https://unikue.cn
+- Jiovan: https://jiovan.com

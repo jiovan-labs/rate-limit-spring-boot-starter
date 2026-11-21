@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Unikue Ltd. All rights reserved.
+ * Copyright (c) 2022 Jiovan Ltd. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package cn.unikue.springstarter.ratelimiter.aspect;
+package com.jiovan.spring.starter.ratelimit.aspect;
 
 
 import java.lang.reflect.Method;
@@ -30,18 +30,18 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.core.annotation.AnnotationUtils;
 import org.springframework.util.Assert;
 import org.springframework.util.ClassUtils;
-import cn.unikue.commonplexus.javaseutil.constant.AssertMessageConst;
-import cn.unikue.commonplexus.javaseutil.constant.CharVariantConst;
-import cn.unikue.commonplexus.javaseutil.util.StringUtilsWraps;
-import cn.unikue.commonplexus.springutil.util.AopUtilsWraps;
-import cn.unikue.commonplexus.springutil.util.BeanFactoryWraps;
-import cn.unikue.commonplexus.springutil.util.RequestMappingWraps;
-import cn.unikue.commonplexus.springutil.util.WebUtilsWraps;
-import cn.unikue.springstarter.ratelimiter.annotation.RateLimit;
-import cn.unikue.springstarter.ratelimiter.enumeration.LimiterTriggerType;
-import cn.unikue.springstarter.ratelimiter.facade.RateLimitCallback;
-import cn.unikue.springstarter.ratelimiter.facade.RateLimitInformant;
-import cn.unikue.springstarter.ratelimiter.property.RateLimiterProperties;
+import com.jiovan.plexus.common.toolkit.constant.AssertMessageConst;
+import com.jiovan.plexus.common.toolkit.constant.CharVariantConst;
+import com.jiovan.plexus.common.toolkit.util.StringUtilsWraps;
+import com.jiovan.plexus.spring.toolkit.util.AopUtilsWraps;
+import com.jiovan.plexus.spring.toolkit.util.BeanFactoryWraps;
+import com.jiovan.plexus.spring.toolkit.util.RequestMappingWraps;
+import com.jiovan.plexus.spring.toolkit.util.WebUtilsWraps;
+import com.jiovan.spring.starter.ratelimit.annotation.RateLimit;
+import com.jiovan.spring.starter.ratelimit.enumeration.LimiterTriggerType;
+import com.jiovan.spring.starter.ratelimit.facade.RateLimitCallback;
+import com.jiovan.spring.starter.ratelimit.facade.RateLimitInformant;
+import com.jiovan.spring.starter.ratelimit.property.RateLimiterProperties;
 import lombok.extern.slf4j.Slf4j;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -66,7 +66,16 @@ public abstract class AbstractRateLimitAspect implements ApplicationContextAware
         this.limitCallback = callback;
     }
 
-    @Around(value = "@annotation(cn.unikue.springstarter.ratelimiter.annotation.RateLimit)")
+    /**
+     * Applies the {@link com.jiovan.spring.starter.ratelimit.annotation.RateLimit} policy around the intercepted join point
+     *
+     * @param point the join point representing the annotated method invocation
+     *
+     * @return the result of the intercepted method, or the result produced by the rate limit callback
+     *
+     * @throws Throwable if the intercepted method or the rate limiting process throws an exception
+     */
+    @Around(value = "@annotation(com.jiovan.spring.starter.ratelimit.annotation.RateLimit)")
     public Object aroundPoint(@Nonnull ProceedingJoinPoint point) throws Throwable {
         Method method = AopUtilsWraps.getTargetMethod(point);
         Assert.notNull(method, AssertMessageConst.NOT_NULL);

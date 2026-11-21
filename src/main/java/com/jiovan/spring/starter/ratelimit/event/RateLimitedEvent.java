@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016 Unikue Ltd. All rights reserved.
+ * Copyright (c) 2016 Jiovan Ltd. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package cn.unikue.springstarter.ratelimiter.event;
+package com.jiovan.spring.starter.ratelimit.event;
 
 
 import jakarta.annotation.Nonnull;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.context.ApplicationEvent;
-import cn.unikue.commonplexus.javaseutil.util.ObjectUtilsWraps;
+import com.jiovan.plexus.common.toolkit.util.ObjectUtilsWraps;
 
 
 /**
@@ -28,7 +28,7 @@ import cn.unikue.commonplexus.javaseutil.util.ObjectUtilsWraps;
  *
  * @author David Hsing
  *
- * @see cn.unikue.springstarter.ratelimiter.exception.RateLimitedException
+ * @see com.jiovan.spring.starter.ratelimit.exception.RateLimitedException
  */
 @SuppressWarnings("unused")
 public class RateLimitedEvent extends ApplicationEvent {
@@ -36,6 +36,11 @@ public class RateLimitedEvent extends ApplicationEvent {
         super(request);
     }
 
+    /**
+     * Returns the request carried as the source of this rate limited event
+     *
+     * @return the {@link jakarta.servlet.http.HttpServletRequest} that was rate limited
+     */
     @Nonnull
     public HttpServletRequest getServletRequest() {
         return ObjectUtilsWraps.castAs(super.getSource(), HttpServletRequest.class);

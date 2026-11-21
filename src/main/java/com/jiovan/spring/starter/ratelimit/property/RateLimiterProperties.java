@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Unikue Ltd. All rights reserved.
+ * Copyright (c) 2022 Jiovan Ltd. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,24 +14,24 @@
  * limitations under the License.
  */
 
-package cn.unikue.springstarter.ratelimiter.property;
+package com.jiovan.spring.starter.ratelimit.property;
 
 
 import java.io.Serializable;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import cn.unikue.springstarter.ratelimiter.config.RateLimiterAutoConfiguration;
-import cn.unikue.springstarter.ratelimiter.enumeration.LimiterStorageType;
+import com.jiovan.spring.starter.ratelimit.config.RateLimitAutoConfiguration;
+import com.jiovan.spring.starter.ratelimit.enumeration.LimiterStorageType;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
 
 /**
- * Properties for Rate Limiter starter
+ * Properties for Rate Limit starter
  *
  * @author David Hsing
  */
-@ConfigurationProperties(prefix = RateLimiterAutoConfiguration.PROPERTIES_PREFIX)
+@ConfigurationProperties(prefix = RateLimitAutoConfiguration.PROPERTIES_PREFIX)
 @Getter
 @Setter
 @ToString
@@ -59,12 +59,12 @@ public class RateLimiterProperties implements Serializable {
     private String nameSuffix;
 
     /**
-     * Throws {@link cn.unikue.springstarter.ratelimiter.exception.RateLimitedException} instead of redirection
+     * Throws {@link com.jiovan.spring.starter.ratelimit.exception.RateLimitedException} instead of redirection
      */
     private Boolean throwException = true;
 
     /**
-     * The url to redirect, handled in html model, if exceed the limitation
+     * The url to redirect, handled in HTML model, if exceed the limitation
      */
     private String deniedHtmlUrl;
 

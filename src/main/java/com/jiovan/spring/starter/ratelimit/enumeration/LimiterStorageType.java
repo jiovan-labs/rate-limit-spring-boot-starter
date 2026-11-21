@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Unikue Ltd. All rights reserved.
+ * Copyright (c) 2022 Jiovan Ltd. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,16 +14,24 @@
  * limitations under the License.
  */
 
-package cn.unikue.springstarter.ratelimiter.facade;
+package com.jiovan.spring.starter.ratelimit.enumeration;
+
+
+import com.jiovan.plexus.common.toolkit.enumeration.ValueEnum;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 
 
 /**
- * Facade for rate limit informant
+ * Enumerations of limiter storage types
  *
  * @author David Hsing
  */
-@FunctionalInterface
-public interface RateLimitInformant {
-    @SuppressWarnings("RedundantThrows")
-    String getUsername() throws Exception;
+@AllArgsConstructor
+@Getter
+@SuppressWarnings("unused")
+public enum LimiterStorageType implements ValueEnum<String> {
+    REDIS("redis");    // $NON-NLS-1$
+
+    private final String value;
 }

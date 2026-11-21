@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Unikue Ltd. All rights reserved.
+ * Copyright (c) 2022 Jiovan Ltd. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package cn.unikue.springstarter.ratelimiter.facade.impl;
+package com.jiovan.spring.starter.ratelimit.facade.impl;
 
 
 import jakarta.annotation.Nonnull;
@@ -22,10 +22,10 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.context.MessageSource;
 import org.springframework.context.MessageSourceAware;
 import org.springframework.context.i18n.LocaleContextHolder;
-import cn.unikue.commonplexus.springutil.util.MessageSourceWraps;
-import cn.unikue.springstarter.ratelimiter.annotation.RateLimit;
-import cn.unikue.springstarter.ratelimiter.facade.RateLimitCallback;
-import cn.unikue.springstarter.ratelimiter.property.RateLimiterProperties;
+import com.jiovan.plexus.spring.toolkit.util.MessageSourceWraps;
+import com.jiovan.spring.starter.ratelimit.annotation.RateLimit;
+import com.jiovan.spring.starter.ratelimit.facade.RateLimitCallback;
+import com.jiovan.spring.starter.ratelimit.property.RateLimiterProperties;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 

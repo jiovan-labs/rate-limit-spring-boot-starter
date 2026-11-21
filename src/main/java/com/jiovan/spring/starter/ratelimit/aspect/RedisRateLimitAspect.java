@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Unikue Ltd. All rights reserved.
+ * Copyright (c) 2022 Jiovan Ltd. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package cn.unikue.springstarter.ratelimiter.aspect;
+package com.jiovan.spring.starter.ratelimit.aspect;
 
 
 import java.time.temporal.ChronoUnit;
@@ -26,15 +26,15 @@ import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.util.Assert;
-import cn.unikue.commonplexus.javaseutil.constant.AssertMessageConst;
-import cn.unikue.commonplexus.javaseutil.util.LocalDateWraps;
-import cn.unikue.commonplexus.springutil.util.RedisTemplateWraps;
-import cn.unikue.commonplexus.springutil.util.WebUtilsWraps;
-import cn.unikue.springstarter.ratelimiter.annotation.RateLimit;
-import cn.unikue.springstarter.ratelimiter.event.RateLimitedEvent;
-import cn.unikue.springstarter.ratelimiter.exception.RateLimitedException;
-import cn.unikue.springstarter.ratelimiter.facade.RateLimitCallback;
-import cn.unikue.springstarter.ratelimiter.property.RateLimiterProperties;
+import com.jiovan.plexus.common.toolkit.constant.AssertMessageConst;
+import com.jiovan.plexus.common.toolkit.util.LocalDateWraps;
+import com.jiovan.plexus.spring.toolkit.util.RedisTemplateWraps;
+import com.jiovan.plexus.spring.toolkit.util.WebUtilsWraps;
+import com.jiovan.spring.starter.ratelimit.annotation.RateLimit;
+import com.jiovan.spring.starter.ratelimit.event.RateLimitedEvent;
+import com.jiovan.spring.starter.ratelimit.exception.RateLimitedException;
+import com.jiovan.spring.starter.ratelimit.facade.RateLimitCallback;
+import com.jiovan.spring.starter.ratelimit.property.RateLimiterProperties;
 import lombok.Getter;
 import lombok.Setter;
 
